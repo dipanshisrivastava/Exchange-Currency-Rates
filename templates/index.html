@@ -1,0 +1,51 @@
+<head>
+    <title>Link CSS to HTML</title>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="static/styles.css" /> 
+</head>
+<body background="static/image.webp">
+    <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <a class="navbar-brand" href="#">Currency Exchange Rates</a>
+    </nav>
+      
+    <div class="container">
+        <div style="text-align: center;">
+            <form action="{{url_for('get_value')}}" method="post">
+                <label for="fromrate" style="color: rgb(5, 5, 5);">From</label>
+                <br>
+                <select name="fromcurrency" id="fromrate">
+                    <option value="Select">Select</option>
+                    <option value="EUR">EUR</option>
+                    <option value="INR">INR</option>
+                    <option value="KRW">KRW</option>
+                    <option value="CNY">CNY</option>
+                    <option value="USD">USD</option>
+                </select>
+                <label for="torate" style="color: rgb(5, 5, 5);">To</label>
+                <select name="tocurrency" id="torate">
+                    <option value="Select">Select</option>
+                    <option value="INR">INR</option>
+                    <option value="KRW">KRW</option>
+                    <option value="CNY">CNY</option>
+                    <option value="USD">USD</option>
+                    <option value="EUR">EUR</option>
+                  </select>
+                <br>
+                <br>
+                <input type="submit" value="Convert" />
+            </form>
+            <h3>{{ ans }}</h3>
+        </div>
+    <!-- <br>
+        <div>
+            <h3>{{ ans }}</h3>
+        </div>
+    </div> -->
+</body>
