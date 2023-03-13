@@ -1,5 +1,5 @@
 import requests
-
+#function takes both the values from 'get_value' function in main.py, calculate converted value and returns
 def show_value(from_currency, to_currency):    
     if(from_currency == 'Select' or to_currency == 'Select'):
         return 'Invalid input'

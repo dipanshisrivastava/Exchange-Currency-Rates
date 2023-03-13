@@ -3,10 +3,13 @@ import businesslayer as bl
 
 app = Flask(__name__)
 
+#home page
 @app.route("/")
 def home():
     return render_template("index.html")
 
+# function collects values from both the dropdowns and sends the values to "show_value" function in businesslayer.py file
+# Now result contain final converted value, which is then send to index.html 
 @app.route('/get_value', methods=['POST'])
 def get_value():
     from_currency = str(request.form.get('fromcurrency'))
