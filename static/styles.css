@@ -1,3 +1,7 @@
+.navbar {
+    background-color: #176992;
+}
+
 .container {
     display: flex;
     align-items: center;

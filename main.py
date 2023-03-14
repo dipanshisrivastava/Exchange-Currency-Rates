@@ -14,8 +14,9 @@ def home():
 def get_value():
     from_currency = str(request.form.get('fromcurrency'))
     to_currency = str(request.form.get('tocurrency'))
-    result = bl.show_value(from_currency, to_currency)
-    return render_template('index.html', ans = result)
+    amount = "1"
+    min_val, max_val = bl.call_from_main(from_currency, to_currency, amount)
+    return render_template('index.html', minimum = min_val, maximum = max_val)
 
 if __name__ == "__main__":
     app.run(debug=True)
